@@ -13,10 +13,9 @@ install version 0.3.0 of PyTorch or adapt it to the newer version of PyTorch.
 
 ## Instructions for dataset download
 
-You can download and dataset from [here](http://forensics.idealtest.org/Firearm14k/). Two separate data
+You can download the dataset from [here](http://forensics.idealtest.org/Firearm14k/). Two separate data
 are used for the experiment. One is for classification training, and the other is for the retrieva
 training. After downloading this dataset, extract it under the folder `data` using the following command:
-
 
 ```
 tar -zxvf firearm-train-val.tar.gz -C data/ # for the classification data
