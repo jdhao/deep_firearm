@@ -268,8 +268,8 @@ class FirearmCls(torch.utils.data.Dataset):
             self.train_imgs, self.train_labels = _train
             self.test_imgs, self.test_labels = _test
         else:
-            train_pth = "/home/jdhao/PycharmProjects/firearm_retrieval_experiment/libs/cls_train_data.pt"
-            test_pth = "/home/jdhao/PycharmProjects/firearm_retrieval_experiment/libs/cls_test_data.pt"
+            train_pth = "libs/cls_train_data.pt"
+            test_pth = "libs/cls_test_data.pt"
             self.train_imgs, self.train_labels = torch.load(train_pth)
             self.test_imgs, self.test_labels = torch.load(test_pth)
 
@@ -277,7 +277,6 @@ class FirearmCls(torch.utils.data.Dataset):
 
     def _split_train_test(self):
         labels = np.asarray(self.labels)
-
         num_cls = np.unique(self.labels).size
         train_imgs = []
         train_labels = []
@@ -304,8 +303,8 @@ class FirearmCls(torch.utils.data.Dataset):
         random.shuffle(test_data)
         test_imgs, test_labels = zip(*test_data)
 
-        torch.save((train_imgs, train_labels), "cls_train_data.pt")
-        torch.save((test_imgs, test_labels), "cls_test_data.pt")
+        torch.save((train_imgs, train_labels), "libs/cls_train_data.pt")
+        torch.save((test_imgs, test_labels), "libs/cls_test_data.pt")
 
         return (train_imgs, train_labels), (test_imgs, test_labels)
 

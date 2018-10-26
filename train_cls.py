@@ -95,7 +95,7 @@ def main():
     ])
 
     train_set = FirearmCls(root=args.data, train=True,
-                           regen_train_test=False, transform=train_trans)
+                           regen_train_test=True, transform=train_trans)
     train_loader = DataLoader(dataset=train_set, batch_size=args.batch_size,
                               shuffle=True, collate_fn=my_collate_cls,
                               num_workers=args.worker, pin_memory=True)
