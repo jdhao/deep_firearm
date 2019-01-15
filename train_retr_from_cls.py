@@ -79,7 +79,8 @@ def main():
     global args, best_mAP, val_mAP
 
     embed_net = vgg16_basenet(pretrained=True,
-                              checkpoint_dir="model/checkpoint/vgg16_cls/model_best.pth.tar")
+                              checkpoint_dir="model/checkpoint/vgg16_cls/"
+                              "model_best.pth.tar")
     sim_net = SiameseNetBaseline(embed_net).cuda()
 
     criterion = SoftContrastiveLoss(margin1=args.margin1, margin2=args.margin2)
@@ -165,7 +166,7 @@ def train(model, train_loader, criterion, optimizer, epoch):
         data_time.update(time.time()-end)
         optimizer.zero_grad()
 
-        batch_loss = 0 # used to record average loss of the batch
+        batch_loss = 0  # used to record average loss of the batch
         total_loss = 0
         for i in range(len(target)):
             im1 = Variable(batch_img1[i].unsqueeze(0).cuda())
@@ -178,7 +179,7 @@ def train(model, train_loader, criterion, optimizer, epoch):
             total_loss += loss
             batch_loss += loss.data[0]
 
-            if (i+1)%args.real_batchsize == 0 or i == len(target)-1:
+            if (i+1) % args.real_batchsize == 0 or i == len(target)-1:
                 total_loss /= len(target)
                 total_loss.backward()
                 total_loss = 0
@@ -254,7 +255,7 @@ def save_checkpoint(state, is_best, filename="checkpoint.pth.tar"):
 def adjust_learning_rate(optimizer, epoch):
     lr = args.learning_rate*(0.1**(epoch//10))
     for param_group in optimizer.param_groups:
-        param_group['lr']=lr
+        param_group['lr'] = lr
 
 
 class AverageMeter(object):

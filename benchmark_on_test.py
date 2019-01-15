@@ -82,8 +82,8 @@ def main():
             aps.append(ap)
 
             # print("query {}, ap is {:.3f}".format(query_id, ap))
-
-            single_score = recall_at_k(position, list(idx), val_set.gt_info[query_id])
+            single_score = recall_at_k(position, list(idx),
+                                       val_set.gt_info[query_id])
             scores += np.array(single_score)
 
         scores /= len(val_set.query_imgs)

@@ -39,7 +39,6 @@ parser.add_argument("--worker", type=int, default=6,
                     help="number of workers to fetch the data")
 parser.add_argument("--print-freq", type=int, default=10,
                     help="training stats print frequency (default: 10)")
-
 args = parser.parse_args()
 
 best_acc = 0

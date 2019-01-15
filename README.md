@@ -4,7 +4,7 @@ This is the code our ICPR2018 paper "DeepFirearm: Learning Discriminative Featur
 Representation for Fine-grained Firearm Retrieval".
 
 
-# How to run this code
+# How to run the code
 
 ## Package info
 
@@ -54,15 +54,19 @@ It will show both the mAP and rank-k accuracy for different feature dimensions.
 
 # Citation information
 
-The citation information for this code is:
+If you use this dataset or use our code, please cite the following work:
 
 ```
-@conference{Hao2018DFLD,
-  title={{DeepFirearm}: Learning Discriminative Feature Representation for Fine-grained Firearm Retrieval},
-  author={Jiedong Hao and Jing Dong and Wei Wang and Tieniu Tan},
-  booktitle={2018 24th International Conference on Pattern Recognition (ICPR)},
-  year={2018},
-  publisher={IEEE Computer Society},
-  address={Washington}
-}
+@INPROCEEDINGS{HJD2018DFLD,
+author={J. Hao and J. Dong and W. Wang and T. Tan},
+booktitle={2018 24th International Conference on Pattern Recognition (ICPR)},
+title={DeepFirearm: Learning Discriminative Feature Representation for Fine-grained Firearm Retrieval},
+year={2018},
+volume={},
+number={},
+pages={3335-3340},
+keywords={feature extraction;feedforward neural nets;image classification;image representation;image retrieval;learning (artificial intelligence);convolutional neural networks;single margin contrastive loss;firearm images;double margin contrastive loss;negative image pairs;positive image pairs;fine-grained recognition;Firearm 14k;image retrieval techniques;social media;fine-grained Firearm retrieval;discriminative feature representation;Training;Task analysis;Labeling;Correlation;Image retrieval;Forensics;Convolutional neural networks},
+doi={10.1109/ICPR.2018.8545529},
+ISSN={1051-4651},
+month={Aug},}
 ```

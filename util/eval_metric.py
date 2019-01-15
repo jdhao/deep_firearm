@@ -45,8 +45,3 @@ def recall_at_k(position, img_id_rank, gt_index):
             break
 
     return score
-
-
-
-
-
