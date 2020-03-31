@@ -1,27 +1,33 @@
 # Introduction
 
-This is the code our ICPR2018 paper "DeepFirearm: Learning Discriminative Feature
-Representation for Fine-grained Firearm Retrieval".
+This is the code our ICPR2018 paper "[DeepFirearm: Learning Discriminative
+Feature Representation for Fine-grained Firearm
+Retrieval](https://arxiv.org/abs/1806.02984)".
 
 
 # How to run the code
 
-## Package info
+## Version info
 
-The code is written using the PyTorch version 0.3.0. So In order to run this code, you may
-install version 0.3.0 of PyTorch or adapt it to the newer version of PyTorch.
+The code is written using the PyTorch version 0.3.0. So In order to run this
+code, you may install version 0.3.0 of PyTorch or adapt it to the newer version
+of PyTorch.
 
-## Instructions for dataset download
+## Instructions for downloading dataset
 
-You can download the dataset from [here](https://drive.google.com/drive/folders/1BucERZl51nB20ssxGsQrcT6l59MNLkf7). Two separate data
-are used for the experiment. One is for classification training, and the other is for the retrieva
-training. After downloading this dataset, extract it under the folder `data` using the following command:
+You can download the dataset from
+[here](https://drive.google.com/drive/folders/1BucERZl51nB20ssxGsQrcT6l59MNLkf7).
+Two separate data are used for the experiment. One is for classification
+training, and the other is for the retrieval training. After downloading this
+dataset, extract it under the folder `data` using the following commands:
 
-```
+```bash
 tar -zxvf firearm-train-val.tar.gz -C data/ # for the classification data
 ```
 
-```
+and
+
+```bash
 tar -zxvf firearm-dataset.tar.gz -C data/ # for the retrieval data
 ```
 
@@ -29,16 +35,17 @@ tar -zxvf firearm-dataset.tar.gz -C data/ # for the retrieval data
 
 In order to train the classification model, run the following command:
 
-```
+```bash
 python train_cls.py
 ```
 
-## Train the retrieval model after classfication
+## Train the retrieval model after classification
 
-To get better retrieval performance, we further train the model using retrieval task based on the classification
-model. To train the model, use the following command:
+To get better retrieval performance, we further fine-tune the model using
+retrieval task based on the classification model. To train the model, use the
+following command:
 
-```
+```bash
 python train_retr_from_cls.py
 ```
 
@@ -46,7 +53,7 @@ python train_retr_from_cls.py
 
 To check the model's performance on test set, run the following command:
 
-```
+```python
 python benchmark_on_test.py
 ```
 
