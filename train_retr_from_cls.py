@@ -240,20 +240,25 @@ def validate(model):
 
 
 def save_checkpoint(state, is_best, filename="checkpoint.pth.tar"):
-    directory = "model/check_point/{}".format(args.exp_name)
-    if not os.path.exists(directory):
-        os.makedirs(directory)
 
-    filename = os.path.join(directory, filename)
+    model_dir = "model/check_point/{}".format(args.exp_name)
+    if not os.path.exists(model_dir):
+        os.makedirs(model_dir)
+
+    filename = os.path.join(model_dir, filename)
     torch.save(state, filename)
-
     if is_best:
-        src = os.path.join(directory, "model_best.pth.tar")
+        src = os.path.join(model_dir, "model_best.pth.tar")
         shutil.copyfile(filename, src)
 
 
 def adjust_learning_rate(optimizer, epoch):
+    """
+    Decrease learning rate every 10 epochs
+    """
+
     lr = args.learning_rate*(0.1**(epoch//10))
+
     for param_group in optimizer.param_groups:
         param_group['lr'] = lr
 
