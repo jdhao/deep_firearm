@@ -36,7 +36,7 @@ tar -zxvf firearm-dataset.tar.gz -C data/ # for the retrieval data
 In order to train the classification model, run the following command:
 
 ```bash
-python train_cls.py
+uv run python train_cls.py
 ```
 
 ## Train the retrieval model after classification
@@ -46,7 +46,7 @@ retrieval task based on the classification model. To train the model, use the
 following command:
 
 ```bash
-python train_retr_from_cls.py
+uv run python train_retr_from_cls.py
 ```
 
 ## Benchmark on test set
@@ -54,7 +54,7 @@ python train_retr_from_cls.py
 To check the model's performance on test set, run the following command:
 
 ```python
-python benchmark_on_test.py
+uv run python benchmark_on_test.py
 ```
 
 It will show both the mAP and rank-k accuracy for different feature dimensions.

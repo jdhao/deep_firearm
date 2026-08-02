@@ -1,0 +1,16 @@
+[project]
+name = "deep-firearm"
+version = "0.1.0"
+description = "Source code for deep-firearm"
+readme = "README.md"
+authors = [
+    { name = "jdhao", email = "jdhao@hotmail.com" }
+]
+requires-python = "~=3.9.0"
+dependencies = [
+  "torch",
+  "scikit-learn",
+  "numpy",
+  "pillow",
+  "torchvision",
+]
